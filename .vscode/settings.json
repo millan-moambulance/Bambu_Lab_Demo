@@ -1,0 +1,23 @@
+{
+  "workbench.colorTheme": "Visual Studio Dark - C++",
+  "editor.mouseWheelZoom": true,
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "files.autoSave": "afterDelay",
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+
+  // 🔥 Path Intellisense settings
+  "path-intellisense.extensionOnImport": true,
+  "path-intellisense.autoSlashAfterDirectory": true,
+
+  // ✅ Make path suggestions cleaner (no random words)
+  "editor.suggest.showWords": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  "php.validate.executablePath": "",
+  "workbench.editor.empty.hint": "hidden",
+  "cmake.configureSettings": {}
+}
