@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const faqs = [
   {
@@ -56,6 +57,7 @@ export default function FAQPage() {
           </div>
         ))}
       </div>
+      <Footer/>
     </div>
   );
 }

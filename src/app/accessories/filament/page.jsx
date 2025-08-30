@@ -1,4 +1,5 @@
 // src/app/accessories/filament/page.jsx
+import Footer from "@/components/Footer";
 import Image from "next/image";
 
 export default function FilamentPage() {
@@ -194,6 +195,7 @@ export default function FilamentPage() {
         ))}
       </div>
     </div>
+    <Footer/>
     </div>
   );
   

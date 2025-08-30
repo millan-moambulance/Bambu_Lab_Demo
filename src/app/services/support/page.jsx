@@ -8,6 +8,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useRef } from "react";
+import Footer from "@/components/Footer";
 
 
 export default function ProductSupport() {
@@ -303,6 +304,7 @@ export default function ProductSupport() {
         ))}
       </div>
     </section>
+    <Footer/>
     </div>
   );
 }

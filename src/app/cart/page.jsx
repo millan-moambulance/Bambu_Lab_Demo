@@ -66,7 +66,7 @@ export default function CartPage() {
                   className="px-3 py-1 bg-gray-200 rounded-md text-green-500 font-bold "
                 >
                   +
-                </button>
+                </button> 
               </div>
               <button
                 onClick={() => removeItem(item.id)}

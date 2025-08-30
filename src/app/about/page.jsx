@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Image from "next/image";
 export default function AboutPage(){
   
@@ -77,6 +78,7 @@ export default function AboutPage(){
            
           </div>
         </section>
+        <Footer/>
 </div>
   );
 }
