@@ -49,6 +49,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         
         <main className="pt-16">{children}</main>
+        <script src="https://checkout.razorpay.com/v1/checkout.js" />
       </body>
     </html>
   );

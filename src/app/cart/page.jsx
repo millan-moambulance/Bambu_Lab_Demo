@@ -4,11 +4,58 @@ import Image from "next/image";
 
 export default function CartPage() {
   const [cart, setCart] = useState([]);
-
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(storedCart);
   }, []);
+
+
+const handleCheckout = async () => {
+  try {
+    const res = await fetch("/api/create-order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ amount: total }),
+    });
+
+    const order = await res.json();
+
+    if (!order?.id) {
+      alert(" Failed to create order");
+      return;
+    }
+
+    const options = {
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+      amount: order.amount,
+      currency: order.currency,
+      name: "Bambu Lab",
+      description: "Test Transaction",
+      order_id: order.id,
+      handler: function (response) {
+        //  Payment success
+        alert(` Payment successful: ${response.razorpay_payment_id}`);
+
+        // Clear cart in localStorage & state
+        localStorage.removeItem("cart");
+        setCart([]); 
+      },
+      prefill: {
+        name: "Millan Sahu",
+        email: "millan@gmail.com",
+        contact: "8328840288",
+      },
+      theme: { color: "#3399cc" },
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  } catch (error) {
+    console.error(error);
+    alert(" Something went wrong");
+  }
+};
+
 
   const updateQuantity = (id, delta) => {
     const updatedCart = cart.map((item) =>
@@ -80,7 +127,8 @@ export default function CartPage() {
       </div>
       <div className="text-right mt-8">
         <h2 className="text-2xl font-bold">Total: ${total.toFixed(2)}</h2>
-        <button className="mt-4 bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-md font-semibold">
+        <button onClick={handleCheckout}
+        className="mt-4 bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-md font-semibold">
           Checkout
         </button>
       </div>
