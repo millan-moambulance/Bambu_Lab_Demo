@@ -1,10 +1,7 @@
 import Footer from "@/components/Footer";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-// import Hero from "@/components/Hero";
-// import ProductSection from "@/components/ProductSection";
-// import ReviewsAndBlog from "@/components/ReviewsAndBlog";
-// import Footer from "@/components/Footer";
+import Script from "next/script";
 export const metadata = {
   title:{
     default : "Bambu Lab",
@@ -49,9 +46,14 @@ export default function RootLayout({ children }) {
         <Navbar />
         
         <main className="pt-16">{children}</main>
-        <script src="https://checkout.razorpay.com/v1/checkout.js" />
+         <Script
+          src="https://checkout.razorpay.com/v1/checkout.js"
+          strategy="afterInteractive" // ensures it loads after page is interactive
+        />
       </body>
     </html>
   );
 }
+
+
 
