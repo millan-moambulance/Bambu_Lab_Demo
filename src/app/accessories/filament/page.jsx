@@ -112,7 +112,7 @@ export default function FilamentPage() {
   return (
     <div className="bg-white">
     <div className="max-w-7xl mx-auto px-6 py-12 ">
-      <h1 className="text-3xl font-bold mt-20">Applications</h1>
+      <h1 className="text-3xl font-bold mt-5">Applications</h1>
       <p className="text-gray-800 mb-8 mt-6 text-lg">
         Choose the scenario that best fits your project needs to receive relevant
         recommendations and comparisons.
