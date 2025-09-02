@@ -14,7 +14,7 @@ export default function MakerPage() {
     },
     {
       name: "WOL3D",
-      logo: "/images/Wol3d.png",
+      logo: "/images/Wol3D.png",
       link: "https://www.wol3d.com/",
     },
     {
